@@ -21,7 +21,7 @@ def home():
     return render_template('sentiment.html')
 
 
-@app.route('/sentiment.html', methods=['POST', 'GET'])
+@app.route('/sentiment.html')
 def sentiment():
     text = request.form['text']
     

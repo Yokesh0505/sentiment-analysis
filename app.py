@@ -24,9 +24,15 @@ def home():
 
 @app.route('/sentiment.html', methods=['POST', 'GET'])
 def sentiment():
-    str_features = [str(x) for x in request.form.values()]
+    text = request.form['text']
+    
+    nltk.download('vader_lexicon')
+    
     sid = SentimentIntensityAnalyzer()
-    score = ((sid.polarity_scores(str(str_features))))['compound']
+    
+    score = ((sid.polarity_scores(str(text)))['compound'])
+    
+    
     if(score >0):
         label = 'This sentence is positive'
 

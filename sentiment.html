@@ -1,0 +1,39 @@
+<html>
+<head>
+    <meta charset = 'UTF-8'>  
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+   <title> SENTIMENT ANALYSIS  </title>
+</head>
+    
+    
+<body>
+    <div class="login">
+    
+    <h1> SENTIMENT ANALYSIS </h1>
+    <form action="{{ url_for('sentiment')}}"method="post">
+    <h4>Text Sentences</h4>
+    
+    <input type = "text" name = 'text' placeholder='text Sentences' required="required"/>   <br>
+    
+     <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+    
+    
+     <br>
+   {{ prediction_text }}
+
+ </div>
+ 
+</body>
+
+
+
+
+
+
+</html>

@@ -14,8 +14,7 @@ import pickle
 # In[ ]:
 
 
-app = Flask(__name__)
-model = pickle.load(open('model.pkl', 'rb'))
+app = Flask(__name__, template_folder='templates')
 
 @app.route('/')
 def home():
